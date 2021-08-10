@@ -1,0 +1,47 @@
+# sample 0
+
+digraph whynotguide {
+    graph [compound=true];
+
+    "https://whynot.guide" [style=dashed]
+
+    subgraph cluster_aws {
+        label = "AWS";
+        CF [label="CloudFront (CF) Distribution"]
+        S3 [label="AWS Simple Storage Service (S3) Bucket"]
+
+        CF -> S3
+    }
+
+    subgraph cluster_aws_support {
+        label = "AWS Supporting services";
+        "ACM" [label="AWS Certificate Manager (ACM)"]
+        "R53" [label="AWS Route53 (R53)"]
+
+        ACM -> R53 [arrowhead = none]
+    }
+
+
+    "https://whynot.guide" -> "CF" 
+    "CF" -> "ACM" [arrowhead = none]
+}
+
+// digraph {
+//     subgraph cluster_0 {
+//         a0 -> a1 -> a2 -> a3;
+//         label = "process \#1";
+//     }
+
+//     subgraph cluster_1 {
+//         b0 -> b1 -> b2 -> b3;
+//         label = "process \#2";
+//     }
+
+//     start -> a0;
+//     start -> b0;
+//     a1 -> b3;
+//     b2 -> a3;
+//     a3 -> a0;
+//     a3 -> end;
+//     b3 -> end;
+// }
