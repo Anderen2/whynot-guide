@@ -47,7 +47,7 @@ enableRobotsTXT = true
     weight = 4
 
 [[menu.icon]]
-    url = "http://localhost:1313/posts/index.xml"
+    url = "/posts/index.xml"
     name = "fas fa-rss"
     type="application/rss+xml"
     weight = 4
