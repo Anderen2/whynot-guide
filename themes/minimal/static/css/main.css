@@ -28,7 +28,8 @@ img {
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    font-size: 12vmin;
+    /*font-size: 10vw;*/
 }
 
 .intro > h2 {
@@ -39,6 +40,7 @@ img {
 /* Page content */
 
 .content {
+    text-align: left;
     padding-top: 20px;
 }
 
@@ -67,7 +69,7 @@ a:hover {
 /* Copyright message */
 
 .copyright {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 /* Paginator */
@@ -104,5 +106,6 @@ a:hover {
 }
 
 footer {
+    font-size: 10px;
     border-bottom: var(--border-width) solid var(--accent);
 }

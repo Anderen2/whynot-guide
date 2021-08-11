@@ -7,8 +7,8 @@ digraph whynotguide {
 
     subgraph cluster_aws {
         label = "AWS";
-        CF [label="CloudFront (CF) Distribution"]
-        S3 [label="AWS Simple Storage Service (S3) Bucket"]
+        CF [label="CloudFront (CF) distribution"]
+        S3 [label="AWS Simple Storage Service (S3) bucket"]
 
         CF -> S3
     }
@@ -24,6 +24,7 @@ digraph whynotguide {
 
     "https://whynot.guide" -> "CF" 
     "CF" -> "ACM" [arrowhead = none]
+    "CF" -> "R53" [arrowhead = none]
 }
 
 // digraph {

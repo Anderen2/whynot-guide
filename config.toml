@@ -1,6 +1,6 @@
-baseURL = "http://whynot.guide/"
+baseURL = "https://whynot.guide/"
 languageCode = "en-us"
-title = "WhyNot.Guide"
+title = "WhyNot?"
 theme = ["minimal"]
 #enableGitInfo = true
 enableRobotsTXT = true
@@ -44,4 +44,10 @@ enableRobotsTXT = true
 [[menu.icon]]
     url = "https://www.linkedin.com/in/andreas-skoglund/"
     name = "fab fa-linkedin"
+    weight = 4
+
+[[menu.icon]]
+    url = "http://localhost:1313/posts/index.xml"
+    name = "fas fa-rss"
+    type="application/rss+xml"
     weight = 4
