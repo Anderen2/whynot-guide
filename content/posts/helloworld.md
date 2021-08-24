@@ -21,7 +21,9 @@ A detailed guide on how Terraform was used can be found here: [HowTo: Making a s
 [Hugo](https://gohugo.io/) is, according to their creators: 
 > *"... one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."*. 
 
-Which seems to be about right so far. This is the first time I've used any sort of static page generator, and I selected Hugo on a whim, no real reason. I found the [Minimal theme](https://github.com/calintat/minimal) to be quite nice, but I've done some slight modifications on it to make things more functional for my purpose. 
+Which seems to be about right so far. This is the first time I've used any sort of static page generator, and I selected Hugo on a whim, no real reason. I also found the [Minimal theme](https://github.com/calintat/minimal) to be quite nice, but I've done some slight modifications on it to make things more functional for my purpose. 
+
+For those unfamiliar with the term, a "static page generator" is a toolset to pre-generate web-pages to be used without any serverside processing like PHP, Django, etc. Some of you might have known about the "Save as Webpage" option in MS Word, this is similar, just that it's usable. 
 
 The Hugo config I've ended up with so far, and all blog pages can be found here: https://github.com/Anderen2/whynot-blog
 
@@ -41,5 +43,6 @@ I have a detailed write-up on how you can create your own blog-page in the same 
 
 ### So far ...
 
-- Using Hugo seems like a great choice for simple blogs, writing pages in Markdown and not fighting a janky WYSIWYG is for me a joy.
-- AWS with Terraform has worked great, it's much easier to work with AWS when you can tear things down and set it back up again with just a few simple commands. 
+- The "serverless" nature of the solution has worked great in conjunction with Hugo, it's easy to deploy, no lost sleep on patching, and is cost effective. 
+- Hugo was easy to get started with and seems like a great choice for simple blogs, writing pages in Markdown and not fighting a janky WYSIWYG is (for me) a joy.
+- Using AWS with Terraform is much easier to work with than hunting around in the AWS-console, I love the feeling when you can tear things down and set it back up again with just a few simple commands. 
