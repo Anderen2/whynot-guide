@@ -1,6 +1,6 @@
 baseURL = "https://whynot.guide/"
 languageCode = "en-us"
-title = "WhyNot?"
+title = "Why Not?"
 theme = ["minimal"]
 #enableGitInfo = true
 enableRobotsTXT = true
@@ -25,6 +25,11 @@ enableRobotsTXT = true
 [[menu.main]]
     url = "/posts/"
     name = "Posts"
+    weight = 2
+
+[[menu.main]]
+    url = "/tags/HowTos/"
+    name = "HowTo's"
     weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
@@ -32,7 +37,7 @@ enableRobotsTXT = true
 # The list of available icons can be found at http://fontawesome.io/icons.
 
 [[menu.icon]]
-    url = "mailto:anderen2@whynot.guide"
+    url = "mailto:andreas@whynot.guide"
     name = "fas fa-envelope"
     weight = 1
 

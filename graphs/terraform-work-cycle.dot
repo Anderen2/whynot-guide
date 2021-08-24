@@ -1,0 +1,11 @@
+digraph terraform {
+    graph [compound=true];
+
+    "Bright idea!" -> "Start terraform project with a main.tf file" -> "Run 'terraform init'" -> "Write some stuff" -> "Consult the Terraform docs and other random sources" -> "Write some stuff" -> "run 'terraform plan'" -> "fail and debug" -> "Write some stuff"
+    "Write some stuff" -> "main.tf, or file X gets too big, split into multiple files" -> "Write some stuff"
+    "fail and debug" -> "Consult the Terraform docs and other random sources"
+    "run 'terraform plan'" -> "Hey! Plan seems somewhat fine!" -> "Run 'terraform apply'" -> "fail and debug" 
+    "Run 'terraform apply'" -> "something easy was overlooked, but you need to wait an hour anyway due to DNS propagation" -> "Staring at wall" -> "Run 'terraform apply'"
+    "Run 'terraform apply'" -> "Success!" 
+
+}
