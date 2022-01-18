@@ -1,0 +1,99 @@
+digraph whynotguide {
+    graph [compound=true];
+
+	"Thermal Fuse"
+	"Fuse"
+
+	subgraph cluster_mains {
+        label = "Mains AC 230v";
+        "Mains in (L)" [color=red]
+		"Mains in (N)" [color=blue]
+		"Mains in (Ground)" [color=yellow]
+    }
+
+    subgraph cluster_heater {
+    	label = "Heater (AC 230v)";
+    	"Heater Line"
+    	"Heater Neutral"
+    	"Heater Ground"
+    }
+
+    subgraph cluster_pump {
+    	label = "Heater (AC 230v)";
+    	"Pump Line"
+    	"Pump Neutral"
+    }
+
+
+    subgraph cluster_thermostat {
+    	label = "Heater Thermostat";
+    	"1" [color=black]
+    	"2" [color=black]
+    }
+
+    subgraph cluster_powersupply {
+    	label = "Powersupply (AC 230v -> DC 5v)";
+    	"5v supply: Neutral"
+    	"5v supply: Line"
+    	power_plus [label="+"]
+    	power_minus [label="-"]
+    }
+
+    subgraph cluster_heatswitch {
+    	label = "Heat/Cold switch";
+    	"Heat" [color=red]
+    	"Common" [color=black]
+    	"Cold" [color=blue]
+
+    	power_plus -> "Common"
+    }
+	subgraph cluster_micro {
+    	label = "Micro: Spark Core";
+    	micro_vin [label="VIN"]
+    	micro_gnd [label="GND"]
+
+    	micro_d0 [label="D0"]
+
+    	micro_d6 [label="D6"]
+    	micro_d7 [label="D7"]
+
+    	micro_d0 -> "Heat"
+    	power_plus -> micro_vin
+    	power_minus -> micro_gnd
+    }
+
+    subgraph cluster_relay {
+    	label = "Relay";
+    	relay_vcc [label="VCC"]
+    	relay_gnd [label="GND"]
+    	relay_in1 [label="IN1"]
+    	relay_in2 [label="IN2"]
+    	"Heater Common (Relay 2)"
+    	"Heater NO (Relay 2)"
+    	"Pump Common (Relay 1)"
+    	"Pump NO (Relay 1) "
+
+    	power_plus -> relay_vcc
+    	power_minus -> relay_gnd
+
+    	micro_d6 -> relay_in1
+    	micro_d7 -> relay_in2
+    }
+
+
+
+    # AC 230v connections
+	"Mains in (N)" -> "Thermal Fuse"
+	"Mains in (L)" -> "Fuse"
+	"Mains in (Ground)" -> "Heater Ground"
+
+	"Thermal Fuse" -> "Heater Neutral"
+	"Thermal Fuse" -> "Pump Neutral"
+	"Thermal Fuse" -> "5v supply: Neutral"
+
+	"Fuse" -> "5v supply: Line"
+	"Fuse" -> "Heater Common (Relay 2)"
+	"Fuse" -> "Pump Common (Relay 1)"
+
+}
+

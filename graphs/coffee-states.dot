@@ -1,0 +1,55 @@
+digraph coffeestate {
+    graph [compound=true];
+
+    // States
+    "NONE"
+    "idle"
+    "heating"
+    "overheated"
+    "errHEAT"
+    "brewing"
+    "stopped"
+    "done"
+    "overheating"
+    "ready"
+    "finished"
+
+    // External actions
+    "Powered On" [style=dashed]
+    "User moved lever to HEAT" [style=dashed]
+    "Function brewcoffee triggered" [style=dashed]
+    "Too high heat before brewing" [style=dashed]
+    "Temperature sensor outside sane limits" [style=dashed]
+    "Temperature reached for brew" [style=dashed] 
+    "Lever turned to OFF while brewing" [style=dashed] 
+    "Amount of brewing time reached" [style=dashed]
+    "User moved lever to OFF" [style=dashed]
+    "Temperature is too high" [style=dashed]
+
+    "Powered On" -> "NONE"
+    "NONE" -> "idle"
+    "idle" -> "User moved lever to HEAT"
+    "User moved lever to HEAT" -> "ready"
+    "ready" -> "Function brewcoffee triggered"
+    "Function brewcoffee triggered" -> "heating"
+    "Function brewcoffee triggered" -> "Too high heat before brewing"
+    "Too high heat before brewing" -> "overheated"
+    "heating" -> "Temperature sensor outside sane limits"
+    "overheated" -> "Temperature sensor outside sane limits"
+    "Temperature sensor outside sane limits" -> "errHEAT"
+    "errHEAT" -> "finished"
+    "heating" -> "Temperature reached for brew"
+    "Temperature reached for brew" -> "brewing"
+    "overheated" -> "brewing"
+    "brewing" -> "Lever turned to OFF while brewing"
+    "Lever turned to OFF while brewing" -> "stopped"
+    "stopped" -> "finished"
+    "brewing" -> "Amount of brewing time reached"
+    "Amount of brewing time reached" -> "done"
+    "done" -> "finished"
+    "finished" -> "User moved lever to OFF"
+    "User moved lever to OFF" -> "idle"
+    "idle" -> "Temperature is too high"
+    "Temperature is too high" -> "overheating"
+
+}
