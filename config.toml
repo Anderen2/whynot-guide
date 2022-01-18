@@ -5,6 +5,8 @@ theme = ["minimal"]
 #enableGitInfo = true
 enableRobotsTXT = true
 
+[markup.goldmark.renderer]
+unsafe=true
 
 [params]
     accent = "green"
@@ -28,9 +30,14 @@ enableRobotsTXT = true
     weight = 2
 
 [[menu.main]]
+    url = "/tags/Projects/"
+    name = "Projects"
+    weight = 3
+
+[[menu.main]]
     url = "/tags/HowTos/"
     name = "HowTo's"
-    weight = 3
+    weight = 4
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
@@ -52,7 +59,12 @@ enableRobotsTXT = true
     weight = 4
 
 [[menu.icon]]
+    url = "https://ko-fi.com/whynotguide"
+    name = "fas fa-coffee"
+    weight = 4
+    
+[[menu.icon]]
     url = "/posts/index.xml"
     name = "fas fa-rss"
     type="application/rss+xml"
-    weight = 4
+    weight = 5

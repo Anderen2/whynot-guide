@@ -4,7 +4,7 @@ date = "2021-08-01T16:25:47+02:00"
 author = "Andreas Skoglund"
 authorTwitter = "" #do not include @
 cover = ""
-tags = ["blog", "hugo", "aws", "terraform", "s3", "cloudfront", "serverless"]
+tags = ["blog", "hugo", "aws", "terraform", "s3", "cloudfront", "serverless", "Projects"]
 keywords = ["key", "word"]
 description = "AWS & Hugo"
 showFullContent = false
@@ -46,3 +46,6 @@ I have a detailed write-up on how you can create your own blog-page in the same 
 - The "serverless" nature of the solution has worked great in conjunction with Hugo, it's easy to deploy, no lost sleep on patching, and is cost effective. 
 - Hugo was easy to get started with and seems like a great choice for simple blogs, writing pages in Markdown and not fighting a janky WYSIWYG is (for me) a joy.
 - Using AWS with Terraform is much easier to work with than hunting around in the AWS-console, I love the feeling when you can tear things down and set it back up again with just a few simple commands. 
+
+### Addendum: The cost
+Now after running the blog for about 3 months, I checked the cost for a month of usage. All hosting expenses for September 2021 (excluding the domain) was a "whopping" 0.12 USD. Of this, 0.02 USD was for S3 storage, and 0.10 were for Route53. Of course, this blog does not have that much traffic, however I believe it's safe to say that this is quite cost effective nevertheless. 

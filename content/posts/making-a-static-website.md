@@ -425,4 +425,5 @@ As mentioned in the note under `Deploy!`, our first round of `terraform apply` h
 ## Conclusion
 We made it to the end at last, *puh*. I hope that this was of help to you, the reader, in some way. However, if you find yourself totally stuck, or you have a question/feedback on something here, feel free to send me an email @ andreas@whynot.guide. 
 
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'H2H27BCSP');kofiwidget2.draw();</script> 
 Arrivederci!
